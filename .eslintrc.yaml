@@ -1,0 +1,80 @@
+extends:
+  - airbnb
+  - plugin:prettier/recommended
+  - prettier/react
+  - prettier
+  - plugin:jsx-a11y/recommended
+
+parser: babel-eslint
+
+plugins:
+- prettier
+- react
+
+parserOptions:
+  ecmaVersion: 8
+  ecmaFeatures:
+    jsx: true
+    experimentalObjectRestSpread: true
+    impliedStrict: true
+    classes: true
+
+env:
+  browser: true
+  node: true
+  es6: true
+
+
+rules:
+  indent:
+  - error
+  - 2
+  - SwitchCase: 1
+  quotes:
+    - error
+    - single
+    - avoidEscape: true
+      allowTemplateLiterals: true
+  curly:
+  - error
+  no-console:
+  - warn
+  no-unused-vars:
+  - warn
+  - argsIgnorePattern: res|next|^err
+  radix: 'off'
+  no-shadow:
+  - error
+  - hoist: all
+    allow:
+    - resolve
+    - reject
+    - done
+    - next
+    - err
+    - error
+  jsx-a11y/href-no-hash: 'off'
+  jsx-a11y/anchor-is-valid:
+  - warn
+  - aspects:
+    - invalidHref
+  jsx-a11y/rule-name:
+    - warn
+  react/display-name: warn
+  react/react-in-jsx-scope: 'off'
+  react/forbid-prop-types: 'off'
+  react/no-unescaped-entities: 'off'
+  react/jsx-filename-extension:
+    - warn
+    - extensions:
+      - .js
+      - .jsx
+  react/jsx-curly-spacing:
+    - off
+  prettier/prettier:
+    - error
+    - trailingComma: es5
+      singleQuote: true
+      printWidth: 120
+      bracketSpacing: true
+
